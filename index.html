@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zona Austral de Chile</title>
+<meta name="description" content="Zona Austral de Chile en 2 minutos: relieve, clima, agua, recursos e historia de Aysén, Magallanes y la Antártica Chilena.">
+<meta name="theme-color" content="#f6f9fb">
+<meta property="og:title" content="Zona Austral de Chile en 2 minutos">
+<meta property="og:description" content="Un viaje hacia el sur: de los 43° S a los 56° S.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%233b3a9e'/%3E%3Cpath d='M6 38 20 14l8 13 5-8 9 19Z' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linejoin='round'/%3E%3Ccircle cx='36' cy='12' r='4' fill='%23f07b2d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#f6f9fb;--card:#ffffff;--ink:#0f1e2d;--muted:#566779;--cal:#3b3a9e;--len:#e8661a;--line:rgba(15,30,45,.1);--nav:rgba(246,249,251,.88);--p1:#e0f0f8;--p2:#e8e7fb;--p3:#daf2ee;--p4:#fbecd6;--sh:0 20px 40px -28px rgba(30,40,100,.45);
+--sans:"Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#131d31;--ink:#eaf1f8;--muted:#9fb0c3;--cal:#a3a1ff;--len:#ff9a55;--line:rgba(234,241,248,.13);--nav:rgba(11,18,32,.88);--p1:#10293b;--p2:#1c1b3d;--p3:#0f2f2d;--p4:#33260f;--sh:0 20px 40px -28px rgba(0,0,0,.8)}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#131d31;--ink:#eaf1f8;--muted:#9fb0c3;--cal:#a3a1ff;--len:#ff9a55;--line:rgba(234,241,248,.13);--nav:rgba(11,18,32,.88);--p1:#10293b;--p2:#1c1b3d;--p3:#0f2f2d;--p4:#33260f;--sh:0 20px 40px -28px rgba(0,0,0,.8)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.05}
+.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+#nav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top,0px) + .65rem) 5vw .65rem;display:flex;align-items:center;gap:1rem}
+#nav b{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:1.1rem;color:var(--cal);white-space:nowrap;margin-right:auto}
+#nav b .i{width:22px;height:22px}
+.latp{font-size:.78rem;font-weight:600;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:.3rem .8rem;white-space:nowrap}
+.latp i{font-style:normal;color:var(--len);margin-right:.35rem}
+.go{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:inherit;font-weight:600;font-size:.88rem;background:var(--len);color:#fff;padding:.55rem 1.1rem;border-radius:99px;transition:transform .2s,filter .2s}
+.go:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.go .i{width:16px;height:16px;fill:currentColor;stroke:none}
+.go.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+#bar{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,var(--cal),var(--len))}
+
+.rail{position:fixed;left:1.4rem;top:50%;transform:translateY(-50%);height:46vh;width:48px;z-index:30;display:none;pointer-events:none}
+.rail::before{content:"";position:absolute;left:5px;top:0;bottom:0;width:2px;background:var(--line)}
+.rail span{position:absolute;left:18px;font-size:.68rem;font-weight:600;color:var(--muted);transform:translateY(-50%)}
+.rail span::before{content:"";position:absolute;left:-17px;top:50%;width:8px;height:2px;background:var(--line)}
+.rail i{position:absolute;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--len);box-shadow:0 0 0 5px color-mix(in srgb,var(--len) 22%,transparent);transform:translateY(-50%)}
+@media (min-width:1180px){.rail{display:block}}
+
+.wrap{max-width:70rem;margin:0 auto;padding:0 5vw}
+.hero{padding:3.5rem 0 2rem}
+.hg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2.5rem;align-items:center}
+.eb{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--len)}
+.hero h1{font-size:clamp(3.4rem,10.5vw,7.4rem);font-weight:800;line-height:.92;color:var(--cal);margin:.7rem 0 1.1rem}
+.hero h1 span{position:relative;display:inline-block}
+.hero h1 span::after{content:"";position:absolute;left:2%;right:2%;bottom:.04em;height:.12em;background:var(--len);border-radius:9px;transform-origin:left;animation:ul 1.1s .4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ul{from{transform:scaleX(0)}}
+.sub{font-size:1.15rem;color:var(--muted);max-width:30rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.3rem}
+.chips span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:.3rem .9rem;font-size:.82rem;font-weight:500}
+.cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.6rem}
+.art{border-radius:30px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3;background:#dff0f8}
+.art svg{display:block;width:100%;height:100%}
+
+main{padding-bottom:2rem}
+.pn{position:relative;margin:1.4rem auto;max-width:70rem;border-radius:34px;padding:clamp(1.5rem,4vw,3.2rem);min-height:min(80vh,640px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2.2rem;align-items:center;background:var(--pc,var(--card));overflow:hidden}
+.pn.one{grid-template-columns:1fr;align-content:center}
+.pn::before{content:attr(data-n);position:absolute;right:1.6rem;top:.4rem;font-size:clamp(5rem,15vw,9rem);font-weight:800;line-height:1;color:var(--ink);opacity:.06;pointer-events:none}
+.p1{--pc:var(--p1)}.p2{--pc:var(--p2)}.p3{--pc:var(--p3)}.p4{--pc:var(--p4)}
+.tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cal);margin-bottom:.7rem}
+.tag .i{width:20px;height:20px}
+.pn h2{font-size:clamp(2.1rem,5vw,3.5rem)}
+.pn h2 em{font-style:normal;color:var(--cal);background:linear-gradient(transparent 64%,color-mix(in srgb,var(--len) 38%,transparent) 64% 92%,transparent 92%)}
+.bl{list-style:none;margin-top:1.1rem;display:grid;gap:.6rem;max-width:30rem}
+.bl li{position:relative;padding-left:1.5rem;color:var(--muted);font-size:1.03rem}
+.bl li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:3px;background:var(--len);rotate:45deg}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+.rv h2{clip-path:inset(-10% -5% -25% -5%);transition:clip-path 1s .1s cubic-bezier(.2,.8,.2,1),transform 1s .1s cubic-bezier(.2,.8,.2,1)}
+.rv:not(.in) h2{clip-path:inset(0 0 105% 0);transform:translateY(24px)}
+.vis svg{display:block;width:100%;height:auto}
+.keys{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
+.keys span{display:inline-flex;align-items:center;gap:.45rem;background:var(--card);border-radius:99px;padding:.2rem .8rem .2rem .25rem;font-size:.8rem;font-weight:500}
+.keys b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--cal);color:#fff;font-size:.72rem}
+.nm{font-family:var(--sans);font-weight:700;font-size:20px;fill:#3b3a9e;text-anchor:middle}
+.dash{stroke-dasharray:2 12;animation:ds 1.5s linear infinite}@keyframes ds{to{stroke-dashoffset:-28}}
+.note{font-size:.82rem;color:var(--muted);margin-top:.9rem}
+.src{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+.cl3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.4rem}
+.cc{background:var(--card);border-radius:22px;padding:1.2rem;display:grid;gap:.5rem;align-content:start}
+.cc .ico{width:42px;height:42px}
+.cc h3{font-size:1.3rem}.cc p{font-size:.92rem;color:var(--muted)}
+.ico{width:46px;height:46px;border-radius:14px;background:var(--p2);color:var(--cal);display:grid;place-items:center}
+.ico .i{width:24px;height:24px}
+.m label{display:flex;justify-content:space-between;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:.5rem 0 .2rem}
+.m b{display:block;height:6px;border-radius:9px;background:linear-gradient(90deg,var(--cal),var(--len)) 0 0/calc(var(--v)*20%) 100% no-repeat,var(--line);transition:background-size 1.4s .2s cubic-bezier(.2,.8,.2,1)}
+.rv:not(.in) .m b{background-size:0 100%,auto}
+
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.4rem}
+.rc{background:var(--card);border-radius:22px;padding:1.2rem;transition:transform .3s}.rc:hover{transform:translateY(-5px)}
+.rc h3{font-size:1.2rem;margin:.7rem 0 .2rem}.rc p{font-size:.9rem;color:var(--muted)}
+
+.tl{position:relative;margin:1.4rem 0 0;padding-left:2rem;--tp:0}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl::after{content:"";position:absolute;left:6px;top:6px;width:2px;height:calc((100% - 12px)*var(--tp));background:var(--len)}
+.ti{position:relative;padding:0 0 1.1rem;opacity:.45;transition:opacity .5s}
+.ti::before{content:"";position:absolute;left:-2rem;top:.45rem;width:14px;height:14px;border-radius:50%;background:var(--card);border:2px solid var(--line);transition:all .4s}
+.ti.on{opacity:1}.ti.on::before{background:var(--len);border-color:var(--len);box-shadow:0 0 0 5px color-mix(in srgb,var(--len) 20%,transparent)}
+.ti b{font-size:1.7rem;font-weight:800;color:var(--cal);margin-right:.6rem}
+.ti h3{display:inline;font-size:1.05rem}.ti p{font-size:.92rem;color:var(--muted);margin-top:.1rem;max-width:34rem}
+
+.cart{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.6rem;margin-top:1.4rem;background:var(--card);border-radius:24px;padding:1.6rem}
+.cart h3{font-size:1.25rem;margin-bottom:.5rem}.cart p{font-size:.9rem;color:var(--muted)}
+.comp{display:block;width:100px;margin:.2rem 0 .6rem;color:var(--ink)}
+.leg{display:flex;align-items:center;gap:.7rem;margin:.4rem 0;font-size:.92rem;color:var(--muted)}
+.leg i{width:1.1rem;height:1.1rem;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.scale{display:flex;margin:1rem 0 .3rem;height:10px;border-radius:99px;overflow:hidden;border:2px solid var(--ink)}.scale i{flex:1}.scale i:nth-child(odd){background:var(--ink)}
+
+.pn.dk{--pc:#26267a;color:#f2f0ff}
+.pn.dk h2,.pn.dk h3{color:#fff}.pn.dk h2 em{color:#ffc79c;background:none}.pn.dk .tag{color:#ffc79c}.pn.dk .bl li{color:rgba(242,240,255,.82)}
+.pn.dk .cc{background:rgba(255,255,255,.08)}.pn.dk .cc p{color:rgba(242,240,255,.8)}.pn.dk .ico{background:rgba(255,255,255,.14);color:#ffc79c}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;border-bottom:1px dashed rgba(255,255,255,.25);padding:.35rem 0;font-size:.92rem;color:rgba(242,240,255,.82)}
+.row b{font-weight:600;color:#ffc79c}
+.pn.dk ul{list-style:none;display:grid;gap:.3rem;font-size:.92rem;color:rgba(242,240,255,.82)}
+.pn.dk .names{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}.pn.dk .names span{background:rgba(255,255,255,.14);border-radius:99px;padding:.2rem .8rem;font-size:.82rem}
+
+footer{max-width:70rem;margin:0 auto;padding:2rem 5vw 5rem;color:var(--muted);font-size:.85rem;text-align:center}
+footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:var(--cal);margin-bottom:.4rem;letter-spacing:-.02em}
+
+#pm{position:fixed;left:50%;bottom:calc(1rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);z-index:60;display:flex;align-items:center;gap:.8rem;background:var(--ink);color:var(--bg);border-radius:99px;padding:.5rem .6rem .5rem 1.2rem;box-shadow:0 18px 40px -14px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+#pm.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+#pm span{font-variant-numeric:tabular-nums;font-weight:600;font-size:.95rem;min-width:5.6rem}
+#pm button{border:0;cursor:pointer;font:inherit;font-weight:600;font-size:.82rem;border-radius:99px;padding:.45rem .9rem;background:rgba(255,255,255,.16);color:inherit}
+#pm button:last-child{background:var(--len);color:#fff}
+#pm i{position:absolute;left:1.2rem;right:1.2rem;bottom:2px;height:3px;border-radius:9px;background:rgba(128,128,128,.3);overflow:hidden}
+#pm i::after{content:"";display:block;height:100%;width:var(--pp,0%);background:var(--len)}
+.totop{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:0;background:var(--cal);color:#fff;display:grid;place-items:center;cursor:pointer;z-index:45;opacity:0;pointer-events:none;transition:opacity .3s}
+.totop.show{opacity:1;pointer-events:auto}.totop .i{width:20px;height:20px}
+body.pres .totop{display:none}
+
+@media (max-width:860px){.hg{grid-template-columns:1fr}.pn{grid-template-columns:1fr;min-height:0;border-radius:28px}.hero{padding-top:2rem}.pn::before{font-size:5rem}}
+@media (max-width:560px){.latp{display:none}#nav .go span{display:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.rv h2{clip-path:none!important;transform:none!important}html{scroll-behavior:auto}.dash,.hero h1 span::after{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-mount" viewBox="0 0 48 48"><path d="M3 40 18 13l9 15 6-9 12 21Z"/><path d="M12 24l6 4 5-5"/></symbol>
+<symbol id="i-rain" viewBox="0 0 48 48"><path d="M13 28a7 7 0 0 1 1-14 10 10 0 0 1 19 3 6 6 0 0 1 0 11Z"/><path d="M16 34l-2 6M26 34l-2 6M36 34l-2 6"/></symbol>
+<symbol id="i-wind" viewBox="0 0 48 48"><path d="M4 18h25a5 5 0 1 0-5-5M4 26h35a5 5 0 1 1-5 5M4 34h17"/></symbol>
+<symbol id="i-snow" viewBox="0 0 48 48"><path d="M24 4v40M7 14l34 20M7 34l34-20M19 7l5 4 5-4M19 41l5-4 5 4"/></symbol>
+<symbol id="i-tree" viewBox="0 0 48 48"><path d="M24 4 12 21h7L9 35h30L29 21h7Z"/><path d="M24 35v9"/></symbol>
+<symbol id="i-drop" viewBox="0 0 48 48"><path d="M24 5C16 16 11 22 11 30a13 13 0 0 0 26 0C37 22 32 16 24 5Z"/><path d="M18 31a6 6 0 0 0 6 6"/></symbol>
+<symbol id="i-flame" viewBox="0 0 48 48"><path d="M24 4c2 8 12 12 12 24a12 12 0 0 1-24 0c0-6 4-9 6-13 1 4 3 5 4 6 1-6 0-11 2-17Z"/></symbol>
+<symbol id="i-fish" viewBox="0 0 48 48"><path d="M4 24c8-12 22-12 30 0-8 12-22 12-30 0Z"/><path d="M34 24l10-8v16Z"/><circle cx="14" cy="22" r="1.5"/></symbol>
+<symbol id="i-log" viewBox="0 0 48 48"><path d="M8 14h28v20H8Z"/><ellipse cx="36" cy="24" rx="5" ry="10"/><path d="M14 20h12M14 28h12"/></symbol>
+<symbol id="i-compass" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><path d="M32 16l-5 11-11 5 5-11Z"/></symbol>
+<symbol id="i-box" viewBox="0 0 48 48"><path d="M24 4 6 13v22l18 9 18-9V13Z"/><path d="M6 13l18 9 18-9M24 22v22"/></symbol>
+<symbol id="i-team" viewBox="0 0 48 48"><circle cx="17" cy="14" r="6"/><path d="M4 40c0-8 6-13 13-13s13 5 13 13"/><path d="M31 9a6 6 0 0 1 0 11M34 28c6 1 10 5 10 12"/></symbol>
+<symbol id="i-mic" viewBox="0 0 48 48"><rect x="17" y="4" width="14" height="24" rx="7"/><path d="M10 22a14 14 0 0 0 28 0M24 36v8M16 44h16"/></symbol>
+<symbol id="i-cam" viewBox="0 0 48 48"><path d="M4 15h10l3-5h14l3 5h10v26H4Z"/><circle cx="24" cy="28" r="7"/></symbol>
+<symbol id="i-pin" viewBox="0 0 48 48"><path d="M24 44C14 30 10 24 10 18a14 14 0 0 1 28 0c0 6-4 12-14 26Z"/><circle cx="24" cy="18" r="5"/></symbol>
+<symbol id="i-book" viewBox="0 0 48 48"><path d="M6 8h15a4 4 0 0 1 4 4v28a3 3 0 0 0-3-3H6ZM42 8H27a4 4 0 0 0-4 4v28a3 3 0 0 1 3-3h16Z"/></symbol>
+<symbol id="i-ruler" viewBox="0 0 48 48"><path d="M5 31 31 5l12 12L17 43Z"/><path d="M13 29l5 5M19 23l4 4M25 17l5 5"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8Z"/></symbol>
+</svg>
+
+<header id="nav"><b><svg class="i"><use href="#i-mount"/></svg>Zona Austral</b>
+  <span class="latp"><i>●</i><span id="lat">43° S</span></span>
+  <button class="go" id="goNav"><svg class="i"><use href="#i-play"/></svg><span>Presentar</span> 2 min</button>
+  <span id="bar"></span>
+</header>
+<aside class="rail" aria-hidden="true"><i id="rm"></i><span style="top:0">43° S</span><span style="top:25%">46°</span><span style="top:50%">49°</span><span style="top:75%">52°</span><span style="top:100%">56° S</span></aside>
+
+<section class="hero" id="inicio" data-t="8"><div class="wrap hg">
+  <div>
+    <span class="eb">Geografía · Historia · Tecnología</span>
+    <h1>Zona<br><span>Austral</span></h1>
+    <p class="sub">Un viaje hacia el sur: de los 43° S a los 56° S, con fiordos, glaciares, estepa y mucha historia.</p>
+    <div class="chips"><span>XI Aysén</span><span>XII Magallanes y Antártica Chilena</span><span>Hasta los 56° S</span><span>Antártica: 53°–90° O</span></div>
+    <div class="cta"><button class="go" id="goHero"><svg class="i"><use href="#i-play"/></svg>Presentar en 2 minutos</button><a class="go ghost" href="#relieve" style="text-decoration:none">Recorrer a mi ritmo</a></div>
+  </div>
+  <div class="art"><svg viewBox="0 0 640 480" role="img" aria-label="Ilustración de un fiordo con montañas nevadas y bosque de lengas">
+    <defs><linearGradient id="hs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe9f6"/><stop offset="1" stop-color="#fbfdfe"/></linearGradient><linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8dd0ea"/><stop offset="1" stop-color="#2b83b6"/></linearGradient></defs>
+    <rect width="640" height="480" fill="url(#hs)"/>
+    <g data-s=".12"><circle cx="470" cy="130" r="74" fill="#ffb273" opacity=".25"/><circle cx="470" cy="130" r="44" fill="#f9a15a"/></g>
+    <g data-s=".06"><path d="M0 300 90 200 150 250 240 140 320 240 400 170 490 260 560 190 640 250V480H0Z" fill="#b9c0f0"/><path d="M240 140l-20 32 12-6 8 10 8-10 12 6ZM400 170l-18 28 11-5 7 9 7-9 11 5ZM560 190l-17 27 10-5 7 8 7-8 10 5Z" fill="#fff"/></g>
+    <g data-s=".035"><path d="M0 340 120 250 200 310 300 220 380 300 470 240 560 310 640 270V480H0Z" fill="#6a68c8"/><path d="M300 220l-18 30 11-5 7 9 7-9 11 5ZM470 240l-16 26 10-4 6 8 6-8 10 4Z" fill="#fff" opacity=".95"/><path d="M296 232 316 312 292 350 274 306Z" fill="#eaf6fb" opacity=".95"/></g>
+    <rect y="344" width="640" height="136" fill="url(#hw)"/>
+    <path d="M20 384q20-8 40 0t40 0 40 0M300 424q20-8 40 0t40 0 40 0M120 452q20-8 40 0t40 0" stroke="#fff" stroke-opacity=".5" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <g data-s=".015"><path d="M0 480V330Q60 300 120 332T250 356L290 480Z" fill="#2a2d86"/><path fill="#f07b2d" d="M36 322l-10 28h20ZM76 318l-11 30h22ZM118 330l-10 26h20ZM160 346l-9 24h18ZM206 352l-10 26h20Z"/></g>
+    <g data-s=".015"><path d="M640 480V372Q560 340 480 380T350 416L320 480Z" fill="#33349a"/><path fill="#e8a13a" d="M590 352l-10 28h20ZM548 356l-11 30h22ZM506 372l-10 26h20ZM462 386l-9 24h18Z"/></g>
+  </svg></div>
+</div></section>
+
+<main>
+<section class="pn p1 rv" id="relieve" data-n="01" data-t="17">
+  <div><span class="tag"><svg class="i"><use href="#i-mount"/></svg>Relieve</span>
+    <h2>Montañas que se <em>hunden en el mar</em></h2>
+    <ul class="bl"><li>Los Andes bajan de altura y se fragmentan.</li><li>La Cordillera de la Costa se sumerge y forma islas, canales y fiordos.</li><li>Campos de Hielo, Torres del Paine y Cabo de Hornos.</li></ul></div>
+  <div class="vis"><svg viewBox="0 0 420 270" role="img" aria-label="Perfil esquemático del relieve de oeste a este">
+    <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a58c4"/><stop offset="1" stop-color="#26267a"/></linearGradient></defs>
+    <rect y="206" width="46" height="64" fill="#7cc4e6"/>
+    <path d="M46 206C60 192 70 172 95 162S140 152 160 122 205 62 235 50 275 72 295 102 340 162 380 177L420 180V270H46Z" fill="url(#pg)"/>
+    <path d="M300 112C330 150 345 168 380 177L420 180V270H320Z" fill="#f2c27a"/>
+    <path d="M205 72Q235 42 265 76Q248 72 238 82Q226 70 205 72Z" fill="#fff"/>
+    <g fill="#fff" stroke="#3b3a9e" stroke-width="2.5"><circle cx="22" cy="228" r="15"/><circle cx="105" cy="150" r="15"/><circle cx="235" cy="30" r="15"/><circle cx="372" cy="160" r="15"/></g>
+    <text class="nm" x="22" y="235">1</text><text class="nm" x="105" y="157">2</text><text class="nm" x="235" y="37">3</text><text class="nm" x="372" y="167">4</text>
+    <text x="8" y="22" font-family="Outfit,sans-serif" font-size="14" font-weight="600" fill="#566779">oeste</text><text x="378" y="22" font-family="Outfit,sans-serif" font-size="14" font-weight="600" fill="#566779">este</text>
+  </svg>
+  <div class="keys"><span><b>1</b>Pacífico</span><span><b>2</b>Fiordos y bosque</span><span><b>3</b>Campos de Hielo</span><span><b>4</b>Estepa</span></div></div>
+</section>
+
+<section class="pn p2 one rv" id="clima" data-n="02" data-t="22">
+  <div><span class="tag"><svg class="i"><use href="#i-rain"/></svg>Clima y ambientes</span>
+    <h2>Del bosque lluvioso a la <em>estepa y el hielo</em></h2>
+    <div class="cl3">
+      <div class="cc"><span class="ico"><svg class="i"><use href="#i-rain"/></svg></span><h3>Marítimo lluvioso</h3><p>Costa oeste: mucha lluvia y bosque siempreverde.</p>
+        <div class="m"><label>Lluvia</label><b style="--v:5"></b><label>Viento</label><b style="--v:4"></b><label>Frío</label><b style="--v:3"></b></div></div>
+      <div class="cc"><span class="ico"><svg class="i"><use href="#i-wind"/></svg></span><h3>Patagónico</h3><p>Estepa arbustiva, vientos gélidos del oeste y pampa fría. Sirve para ganadería ovina y turismo de glaciares, pero hay aislamiento vial.</p>
+        <div class="m"><label>Lluvia</label><b style="--v:1"></b><label>Viento</label><b style="--v:5"></b><label>Frío</label><b style="--v:3"></b></div></div>
+      <div class="cc"><span class="ico"><svg class="i"><use href="#i-snow"/></svg></span><h3>Polar</h3><p>Frío permanente (bajo 0 °C) y hielos perpetuos. Es un laboratorio científico; solo hay bases transitorias.</p>
+        <div class="m"><label>Precipitación</label><b style="--v:2"></b><label>Viento</label><b style="--v:4"></b><label>Frío</label><b style="--v:5"></b></div></div>
+    </div>
+    <p class="note">Patagónico y polar: según las diapositivas. Las barras (1 a 5) solo comparan los climas entre sí.</p></div>
+</section>
+
+<section class="pn p3 rv" id="agua" data-n="03" data-t="15">
+  <div><span class="tag"><svg class="i"><use href="#i-drop"/></svg>Hidrografía</span>
+    <h2>Ríos, lagos y <em>glaciares</em></h2>
+    <ul class="bl"><li>Río Baker: el de mayor caudal de Chile.</li><li>Ríos Pascua y Serrano.</li><li>Lagos General Carrera y O’Higgins.</li><li>Glaciares Grey y Pío XI.</li></ul></div>
+  <div class="vis"><svg viewBox="0 0 420 220" role="img" aria-label="Recorrido del agua desde el glaciar hasta el fiordo">
+    <path d="M44 150C100 40 170 40 220 110S320 190 376 100" fill="none" stroke="#7fc8de" stroke-width="14" opacity=".4" stroke-linecap="round"/>
+    <path d="M44 150C100 40 170 40 220 110S320 190 376 100" fill="none" stroke="#2b83b6" stroke-width="5" class="dash" stroke-linecap="round"/>
+    <g fill="#fff" stroke="#3b3a9e" stroke-width="2.5"><circle cx="44" cy="150" r="17"/><circle cx="150" cy="62" r="17"/><circle cx="262" cy="150" r="17"/><circle cx="376" cy="100" r="17"/></g>
+    <text class="nm" x="44" y="157">1</text><text class="nm" x="150" y="69">2</text><text class="nm" x="262" y="157">3</text><text class="nm" x="376" y="107">4</text></svg>
+  <div class="keys"><span><b>1</b>Glaciar</span><span><b>2</b>Lago</span><span><b>3</b>Río</span><span><b>4</b>Fiordo y mar</span></div></div>
+</section>
+
+<section class="pn p4 one rv" id="recursos" data-n="04" data-t="14">
+  <div><span class="tag"><svg class="i"><use href="#i-flame"/></svg>Recursos y economía</span>
+    <h2>Lo que la tierra y el mar <em>entregan</em></h2>
+    <div class="rg">
+      <div class="rc"><span class="ico" style="background:var(--p4)"><svg class="i"><use href="#i-flame"/></svg></span><h3>Hidrocarburos</h3><p>Petróleo y gas natural en Magallanes; carbón en isla Riesco.</p></div>
+      <div class="rc"><span class="ico" style="background:var(--p4)"><svg class="i"><use href="#i-tree"/></svg></span><h3>Ganadería ovina</h3><p>A gran escala, en las llanuras de la estepa.</p></div>
+      <div class="rc"><span class="ico" style="background:var(--p4)"><svg class="i"><use href="#i-fish"/></svg></span><h3>Pesca y salmonicultura</h3><p>En los canales y fiordos.</p></div>
+      <div class="rc"><span class="ico" style="background:var(--p4)"><svg class="i"><use href="#i-compass"/></svg></span><h3>Turismo extremo</h3><p>Parques nacionales, glaciares y navegación.</p></div>
+    </div></div>
+</section>
+
+<section class="pn one rv" id="historia" data-n="05" data-t="22" style="background:var(--card)">
+  <div><span class="tag"><svg class="i"><use href="#i-book"/></svg>Historia</span>
+    <h2>Cómo Chile <em>llegó al sur</em></h2>
+    <div class="tl" id="tl">
+      <div class="ti"><b>1843</b><h3>Toma de posesión del Estrecho de Magallanes*</h3><p>La goleta Ancud llega y Chile funda el Fuerte Bulnes.</p></div>
+      <div class="ti"><b>1848</b><h3>Nace Punta Arenas*</h3><p>La colonia se traslada a un lugar de mejor clima.</p></div>
+      <div class="ti"><b>1881</b><h3>Tratado de Límites con Argentina*</h3><p>Se confirma la soberanía chilena sobre el Estrecho.</p></div>
+      <div class="ti"><b>1959</b><h3>Tratado Antártico</h3><p>El territorio antártico (53° a 90° O) queda «congelado» pacíficamente, para la ciencia y la protección del ambiente polar.</p></div>
+      <div class="ti"><b>1974</b><h3>La regionalización</h3><p>Se crean 13 regiones, entre ellas la XI de Aysén y la XII de Magallanes y Antártica Chilena, con control de fronteras.</p></div>
+    </div>
+    <p class="note">* Datos agregados por nosotros; el resto sale de las diapositivas de la unidad.</p></div>
+</section>
+
+<section class="pn one rv" id="leer" data-n="06" data-t="12" style="background:var(--card)">
+  <div><span class="tag"><svg class="i"><use href="#i-ruler"/></svg>Rotulación y simbología</span>
+    <h2>Cómo <em>leer</em> la maqueta</h2>
+    <div class="cart" style="background:var(--bg)">
+      <div><h3>Orientación</h3>
+        <svg class="comp" viewBox="0 0 100 100" aria-label="Rosa de los vientos"><g id="ring" style="transform-box:fill-box;transform-origin:center"><circle cx="50" cy="50" r="44" fill="none" stroke="#e8661a" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/></g><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" opacity=".25"/><path d="M50 14 57 50 50 86 43 50Z" fill="#3b3a9e"/><path d="M14 50 50 43 86 50 50 57Z" fill="currentColor" opacity=".3"/><text x="50" y="11" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" font-family="Outfit,Arial,sans-serif">N</text></svg>
+        <p>El norte apunta hacia arriba.</p></div>
+      <div><h3>Leyenda</h3>
+        <div class="leg"><i style="background:#4f9a62"></i>Bosque</div><div class="leg"><i style="background:#e5c47e"></i>Estepa</div><div class="leg"><i style="background:#6a68c8"></i>Cordillera</div><div class="leg"><i style="background:#eaf6fb"></i>Glaciares y hielo</div><div class="leg"><i style="background:#2b83b6"></i>Ríos, lagos y mar</div></div>
+      <div><h3>Escala</h3><p>Escala de la maqueta: <b data-cfg="escala">1 : ______</b></p><div class="scale"><i></i><i></i><i></i><i></i></div><p>0 &nbsp;&nbsp;&nbsp; <span data-cfg="kilometros">___ km</span></p></div>
+    </div></div>
+</section>
+
+<section class="pn dk one rv" id="equipo" data-n="07" data-t="10">
+  <div><span class="tag"><svg class="i"><use href="#i-team"/></svg>El equipo</span>
+    <h2>Cómo la <em>hicimos</em></h2>
+    <div class="cl3">
+      <div class="cc"><span class="ico"><svg class="i"><use href="#i-box"/></svg></span><h3>Materiales</h3><ul><li>Base de cartón o plumavit</li><li>Masa, papel maché o yeso</li><li>Pinturas, algodón y material reciclado</li></ul></div>
+      <div class="cc"><span class="ico"><svg class="i"><use href="#i-team"/></svg></span><h3>Roles</h3><div class="row">Investigación <b data-cfg="roles.investigacion">______</b></div><div class="row">Construcción <b data-cfg="roles.construccion">______</b></div><div class="row">Rotulación <b data-cfg="roles.rotulacion">______</b></div><div class="row">Presentación <b data-cfg="roles.presentacion">______</b></div><div class="names" id="names"></div></div>
+      <div class="cc"><span class="ico"><svg class="i"><use href="#i-mic"/></svg></span><h3>Presentación</h3><p>Explicamos relieve, clima, agua, recursos e historia de la zona austral y respondemos preguntas con seguridad.</p></div>
+    </div></div>
+</section>
+</main>
+
+<footer><b>Gracias por recorrer la zona austral</b>Maqueta Zonas geográficas de Chile · Tecnología 6° básico. Información basada en las diapositivas de la Unidad 4 «Geografía de Chile».</footer>
+
+<div id="pm" role="status"><span id="pt">2:00</span><button id="pp">Pausa</button><button id="ps">Salir</button><i></i></div>
+<button id="totop" class="totop" aria-label="Volver arriba"><svg class="i" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script>
+(function(){
+/* =====================================================
+   CONFIGURACIÓN: edita solo esta parte para completar la página
+   ===================================================== */
+var CONFIG={
+  escala:'',        // Ej: '1 : 500 000'
+  kilometros:'',    // Ej: '100 km'
+  integrantes:[],   // Ej: ['Ana','Luis','María']
+  roles:{investigacion:'',construccion:'',rotulacion:'',presentacion:''},
+  duracion:120      // segundos del modo presentación (2 minutos)
+};
+/* ===================================================== */
+
+var D=document,H=D.documentElement;
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function $(s,c){return (c||D).querySelector(s)}function $$(s,c){return [].slice.call((c||D).querySelectorAll(s))}
+function clamp(x){return Math.max(0,Math.min(1,x))}
+
+$$('[data-cfg]').forEach(function(el){var v=el.dataset.cfg.split('.').reduce(function(o,p){return o&&o[p]},CONFIG);if(v)el.textContent=v});
+$('#names').innerHTML=CONFIG.integrantes.map(function(n){return '<span>'+n+'</span>'}).join('');
+
+var bar=$('#bar'),lat=$('#lat'),rmk=$('#rm'),layers=$$('.art [data-s]'),totop=$('#totop'),ring=$('#ring'),tl=$('#tl'),tis=$$('.ti');
+var tick=false;
+function update(){
+  tick=false;var y=window.scrollY,vh=window.innerHeight,h=Math.max(1,H.scrollHeight-vh),p=clamp(y/h);
+  bar.style.width=(p*100).toFixed(1)+'%';
+  rmk.style.top=(p*100).toFixed(1)+'%';lat.textContent=Math.round(43+p*13)+'° S';
+  totop.classList.toggle('show',y>vh*1.2);
+  if(rm)return;
+  if(y<vh*1.4)layers.forEach(function(l){l.style.translate='0 '+(y*l.dataset.s).toFixed(1)+'px'});
+  var r=tl.getBoundingClientRect();tl.style.setProperty('--tp',clamp((vh*.66-r.top)/r.height).toFixed(3));
+  tis.forEach(function(t){t.classList.toggle('on',t.getBoundingClientRect().top<vh*.66)});
+  ring.style.transform='rotate('+(y*.12)+'deg)';
+}
+function req(){if(!tick){tick=true;requestAnimationFrame(update)}}
+window.addEventListener('scroll',req,{passive:true});window.addEventListener('resize',req);update();
+
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  $$('.rv').forEach(function(el){io.observe(el)});
+}else{$$('.rv').forEach(function(el){el.classList.add('in')})}
+
+totop.onclick=function(){window.scrollTo({top:0,behavior:rm?'auto':'smooth'})};
+
+/* ---------- modo presentación de 2 minutos ---------- */
+var pm=$('#pm'),pt=$('#pt'),pp=$('#pp'),ps=$('#ps'),run=false,paused=false,el=0,last=0,kf=[],total=CONFIG.duracion;
+var plan=$$('[data-t]');
+function mmss(s){s=Math.max(0,Math.ceil(s));return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
+function build(){
+  var vh=window.innerHeight,sc=window.scrollY,sum=plan.reduce(function(a,p){return a+ +p.dataset.t},0),k=total/sum,t=0,pts=[];
+  plan.forEach(function(p){
+    var d=+p.dataset.t*k,r=p.getBoundingClientRect(),top=r.top+sc,ys=Math.max(0,top-76),ye=Math.max(ys,top+r.height-vh+24);
+    pts.push([t,ys]);pts.push([t+d*.8,ye]);t+=d;
+  });
+  pts.push([t,pts[pts.length-1][1]]);kf=pts;
+}
+function yAt(t){
+  for(var i=1;i<kf.length;i++){if(t<=kf[i][0]){var a=kf[i-1],b=kf[i],f=b[0]===a[0]?1:(t-a[0])/(b[0]-a[0]);f=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;return a[1]+(b[1]-a[1])*f}}
+  return kf[kf.length-1][1];
+}
+function loop(now){
+  if(!run)return;
+  if(!paused){el+=Math.min(.1,(now-last)/1000);window.scrollTo(0,yAt(el))}
+  last=now;pt.textContent=mmss(total-el)+' / '+mmss(total);pm.style.setProperty('--pp',(el/total*100).toFixed(1)+'%');
+  if(el>=total){stop(true);return}
+  requestAnimationFrame(loop);
+}
+function start(){
+  if(run)return;build();run=true;paused=false;el=0;last=performance.now();
+  H.style.scrollBehavior='auto';D.body.classList.add('pres');pm.classList.add('on');pp.textContent='Pausa';
+  window.scrollTo(0,0);requestAnimationFrame(loop);
+}
+function stop(done){
+  run=false;H.style.scrollBehavior='';D.body.classList.remove('pres');
+  if(done){pt.textContent='¡Tiempo!';setTimeout(function(){pm.classList.remove('on')},2200)}else pm.classList.remove('on');
+}
+function pause(){if(!run)return;paused=!paused;pp.textContent=paused?'Seguir':'Pausa';if(!paused){last=performance.now()}}
+$('#goNav').onclick=start;$('#goHero').onclick=start;pp.onclick=pause;ps.onclick=function(){stop(false)};
+['wheel','touchstart','keydown'].forEach(function(ev){window.addEventListener(ev,function(e){if(run&&!paused&&!(e.target.closest&&e.target.closest('#pm'))){paused=true;pp.textContent='Seguir'}},{passive:true})});
+window.addEventListener('resize',function(){if(run){var cur=el;build();el=cur}});
+})();
+</script>
+</body>
+</html>
