@@ -94,6 +94,10 @@ main{padding-bottom:2rem}
 .rc{background:var(--card);border-radius:22px;padding:1.2rem;transition:transform .3s}.rc:hover{transform:translateY(-5px)}
 .rc h3{font-size:1.2rem;margin:.7rem 0 .2rem}.rc p{font-size:.9rem;color:var(--muted)}
 
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin-top:1.4rem;counter-reset:s}
+.st{background:var(--card);border-radius:20px;padding:1.1rem 1.1rem 1.2rem;counter-increment:s}
+.st::before{content:counter(s);display:block;font-weight:800;font-size:2rem;line-height:1;color:var(--cal);margin-bottom:.4rem}
+.st h3{font-size:1.1rem;margin-bottom:.2rem}.st p{font-size:.88rem;color:var(--muted)}
 .tl{position:relative;margin:1.4rem 0 0;padding-left:2rem;--tp:0}
 .tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
 .tl::after{content:"";position:absolute;left:6px;top:6px;width:2px;height:calc((100% - 12px)*var(--tp));background:var(--len)}
@@ -104,6 +108,11 @@ main{padding-bottom:2rem}
 .ti h3{display:inline;font-size:1.05rem}.ti p{font-size:.92rem;color:var(--muted);margin-top:.1rem;max-width:34rem}
 
 .comp{display:block;width:100px;margin:.2rem 0 .6rem;color:var(--ink)}
+.cart{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.6rem;margin-top:1.4rem;background:var(--card);border-radius:24px;padding:1.6rem}
+.cart h3{font-size:1.25rem;margin-bottom:.5rem}.cart p{font-size:.9rem;color:var(--muted)}
+.leg{display:flex;align-items:center;gap:.7rem;margin:.4rem 0;font-size:.92rem;color:var(--muted)}
+.leg i{width:1.1rem;height:1.1rem;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.scale{display:flex;margin:1rem 0 .3rem;height:10px;border-radius:99px;overflow:hidden;border:2px solid var(--ink)}.scale i{flex:1}.scale i:nth-child(odd){background:var(--ink)}
 
 .pn.dk{--pc:#26267a;color:#f2f0ff}
 .pn.dk h2,.pn.dk h3{color:#fff}.pn.dk h2 em{color:#ffc79c;background:none}.pn.dk .tag{color:#ffc79c}.pn.dk .bl li{color:rgba(242,240,255,.82)}
@@ -198,6 +207,7 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
         <div class="m"><label>Lluvia</label><b style="--v:1"></b><label>Viento</label><b style="--v:5"></b><label>Frío</label><b style="--v:3"></b></div></div>
       <div class="cc"><span class="ico"><svg class="i"><use href="#i-snow"/></svg></span><h3>Polar</h3><p>Frío permanente (bajo 0 °C) y hielos perpetuos. Es un laboratorio científico; solo hay bases transitorias.</p>
         <div class="m"><label>Precipitación</label><b style="--v:2"></b><label>Viento</label><b style="--v:4"></b><label>Frío</label><b style="--v:5"></b></div></div>
+      <div class="cc"><span class="ico"><svg class="i"><use href="#i-tree"/></svg></span><h3>Vegetación</h3><p>Bosque magallánico de lenga, coihue de Magallanes y ñirre en el oeste; en la estepa, matorrales y pastizales de coirón.</p></div>
     </div>
     <p class="note">Patagónico y polar: según las diapositivas. Las barras (1 a 5) solo comparan los climas entre sí.</p></div>
 </section>
@@ -238,14 +248,37 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
     <p class="note">* Datos agregados por nosotros; el resto sale de las diapositivas de la unidad.</p></div>
 </section>
 
-<section class="pn p1 rv" id="leer" data-n="06" style="min-height:0">
-  <div><span class="tag"><svg class="i"><use href="#i-ruler"/></svg>Orientación</span>
-    <h2>El <em>norte</em> siempre arriba</h2>
-    <p class="sub" style="margin-top:1rem">La zona austral queda en el extremo sur de Chile.</p></div>
-  <div class="vis"><svg class="comp" style="width:min(200px,70%);margin:0 auto" viewBox="0 0 100 100" aria-label="Rosa de los vientos"><g id="ring" style="transform-box:fill-box;transform-origin:center"><circle cx="50" cy="50" r="44" fill="none" stroke="#e8661a" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/></g><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" opacity=".25"/><path d="M50 14 57 50 50 86 43 50Z" fill="#3b3a9e"/><path d="M14 50 50 43 86 50 50 57Z" fill="currentColor" opacity=".3"/><text x="50" y="11" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" font-family="Outfit,Arial,sans-serif">N</text></svg></div>
+<section class="pn p1 one rv" id="leer" data-n="06">
+  <div><span class="tag"><svg class="i"><use href="#i-ruler"/></svg>Rotulación y simbología</span>
+    <h2>Cómo <em>leer</em> la maqueta</h2>
+    <div class="cart">
+      <div><h3>Orientación</h3>
+        <svg class="comp" viewBox="0 0 100 100" aria-label="Rosa de los vientos"><g id="ring" style="transform-box:fill-box;transform-origin:center"><circle cx="50" cy="50" r="44" fill="none" stroke="#e8661a" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/></g><circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" opacity=".25"/><path d="M50 14 57 50 50 86 43 50Z" fill="#3b3a9e"/><path d="M14 50 50 43 86 50 50 57Z" fill="currentColor" opacity=".3"/><text x="50" y="11" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" font-family="Outfit,Arial,sans-serif">N</text></svg>
+        <p>El norte apunta hacia arriba. La zona austral queda en el extremo sur de Chile.</p></div>
+      <div><h3>Leyenda</h3>
+        <div class="leg"><i style="background:#4f9a62"></i>Bosque</div><div class="leg"><i style="background:#e5c47e"></i>Estepa</div><div class="leg"><i style="background:#6a68c8"></i>Cordillera</div><div class="leg"><i style="background:#eaf6fb"></i>Glaciares y hielo</div><div class="leg"><i style="background:#2b83b6"></i>Ríos, lagos y mar</div></div>
+      <div><h3>Escala</h3><p>Escala de la maqueta: <b>1 : ______</b></p><div class="scale"><i></i><i></i><i></i><i></i></div><p>0 &nbsp;&nbsp;&nbsp; ___ km</p></div>
+    </div></div>
 </section>
 
-<section class="pn dk one rv" id="equipo" data-n="07">
+<section class="pn p3 one rv" id="plan" data-n="07">
+  <div><span class="tag"><svg class="i"><use href="#i-ruler"/></svg>Planificación</span>
+    <h2>Cómo <em>planificamos</em> la maqueta</h2>
+    <div class="steps">
+      <div class="st"><h3>Diseñar</h3><p>Dibujamos la zona austral: relieve, clima, agua y vegetación.</p></div>
+      <div class="st"><h3>Reunir materiales</h3><p>Foami moldeable, pintura, cajas de huevo y casas de Monopoly.</p></div>
+      <div class="st"><h3>Preparar y unir</h3><p>Moldeamos el relieve y unimos las piezas sobre la base.</p></div>
+      <div class="st"><h3>Dar el acabado</h3><p>Pintamos los ambientes y ubicamos las casas.</p></div>
+      <div class="st"><h3>Revisar y presentar</h3><p>Revisamos los detalles y explicamos la zona.</p></div>
+    </div>
+    <div class="cl3">
+      <div class="cc"><h3>Implicancias ambientales</h3><p>Reutilizamos cajas de huevo y casas de Monopoly, así generamos menos residuos.</p></div>
+      <div class="cc"><h3>Implicancias sociales</h3><p>Entendemos cómo se vive en una zona aislada y de baja densidad, y trabajamos en equipo.</p></div>
+      <div class="cc"><h3>Trabajo seguro</h3><p>Usamos las herramientas y la pintura con cuidado.</p></div>
+    </div></div>
+</section>
+
+<section class="pn dk one rv" id="equipo" data-n="08">
   <div><span class="tag"><svg class="i"><use href="#i-team"/></svg>El equipo</span>
     <h2>Cómo la <em>hicimos</em></h2>
     <div class="cl3">
