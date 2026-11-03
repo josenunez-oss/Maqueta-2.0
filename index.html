@@ -65,13 +65,14 @@ main{padding-bottom:2rem}
 .tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cal);margin-bottom:.7rem}
 .tag .i{width:20px;height:20px}
 .pn h2{font-size:clamp(2.1rem,5vw,3.5rem)}
-.pn h2 em{font-style:normal;color:var(--cal);background:linear-gradient(transparent 64%,color-mix(in srgb,var(--len) 38%,transparent) 64% 92%,transparent 92%)}
+.pn h2 em{font-style:normal;color:var(--cal);background:linear-gradient(transparent 64%,color-mix(in srgb,var(--len) 38%,transparent) 64% 92%,transparent 92%) 0 0/calc(var(--hl,1)*100%) 100% no-repeat}
 .bl{list-style:none;margin-top:1.1rem;display:grid;gap:.6rem;max-width:30rem}
 .bl li{position:relative;padding-left:1.5rem;color:var(--muted);font-size:1.03rem}
 .bl li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:3px;background:var(--len);rotate:45deg}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
-.rv h2{clip-path:inset(-10% -5% -25% -5%);transition:clip-path 1s .1s cubic-bezier(.2,.8,.2,1),transform 1s .1s cubic-bezier(.2,.8,.2,1)}
-.rv:not(.in) h2{clip-path:inset(0 0 105% 0);transform:translateY(24px)}
+.wd{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.12em;margin-bottom:-.12em}
+.wd>span{display:inline-block;transform:translateY(110%);transition:transform .8s cubic-bezier(.2,.8,.2,1) calc(.1s + var(--w,0)*.055s)}
+.in .wd>span,.no-js .wd>span{transform:none}
 .vis svg{display:block;width:100%;height:auto}
 .keys{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .keys span{display:inline-flex;align-items:center;gap:.45rem;background:var(--card);border-radius:99px;padding:.2rem .8rem .2rem .25rem;font-size:.8rem;font-weight:500}
@@ -102,7 +103,7 @@ main{padding-bottom:2rem}
 .tl{position:relative;margin:1.4rem 0 0;padding-left:2rem;--tp:0}
 .tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
 .tl::after{content:"";position:absolute;left:6px;top:6px;width:2px;height:calc((100% - 12px)*var(--tp));background:var(--len)}
-.ti{position:relative;padding:0 0 1.1rem;opacity:.45;transition:opacity .5s}
+.ti{position:relative;padding:0 0 1.1rem;opacity:.4;translate:-14px 0;transition:opacity .5s,translate .5s}.ti.on{translate:0 0}
 .ti::before{content:"";position:absolute;left:-2rem;top:.45rem;width:14px;height:14px;border-radius:50%;background:var(--card);border:2px solid var(--line);transition:all .4s}
 .ti.on{opacity:1}.ti.on::before{background:var(--len);border-color:var(--len);box-shadow:0 0 0 5px color-mix(in srgb,var(--len) 20%,transparent)}
 .ti b{font-size:1.7rem;font-weight:800;color:var(--cal);margin-right:.6rem}
@@ -119,7 +120,7 @@ main{padding-bottom:2rem}
 .pn.dk h2,.pn.dk h3{color:#fff}.pn.dk h2 em{color:#ffc79c;background:none}.pn.dk .tag{color:#ffc79c}.pn.dk .bl li{color:rgba(242,240,255,.82)}
 .pn.dk .cc{background:rgba(255,255,255,.08)}.pn.dk .cc p{color:rgba(242,240,255,.8)}.pn.dk .ico{background:rgba(255,255,255,.14);color:#ffc79c}
 .pn.dk .cc p.script{font-family:"Dancing Script","Segoe Script","Brush Script MT",cursive;font-weight:700;font-size:2.2rem;line-height:1.15;color:#ffc79c;margin-top:.2rem}
-.pn.dk ul{list-style:none;display:grid;gap:.3rem;font-size:.92rem;color:rgba(242,240,255,.82)}
+.pn.dk ul{list-style:none;padding:0;display:grid;gap:.3rem;font-size:.92rem;color:rgba(242,240,255,.82)}
 
 footer{max-width:70rem;margin:0 auto;padding:2rem 5vw 5rem;color:var(--muted);font-size:.85rem;text-align:center}
 footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:var(--cal);margin-bottom:.4rem;letter-spacing:-.02em}
@@ -136,7 +137,8 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
 .facts>div{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.2rem;box-shadow:var(--sh)}
 .facts b{display:block;font-size:2.8rem;font-weight:800;line-height:1;color:var(--cal)}
 .facts span{font-size:.85rem;color:var(--muted)}
-.snow{position:fixed;inset:0;pointer-events:none;z-index:40;opacity:0;overflow:hidden}
+.snow{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0;overflow:hidden}
+main,.hero,.facts,.loc,footer{position:relative;z-index:1}
 .snow i{position:absolute;top:-10px;border-radius:50%;background:color-mix(in srgb,var(--cal) 45%,transparent);animation:fall linear infinite}
 @keyframes fall{to{transform:translate(40px,105vh)}}
 .pn{scale:calc(.94 + .06*var(--e,1))}
@@ -160,8 +162,16 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
 .m3d{position:relative;background:radial-gradient(circle at 50% 40%,var(--card),var(--p2))}
 .m3d .hint{position:absolute;left:.8rem;bottom:.8rem;background:var(--card);color:var(--muted);border-radius:99px;padding:.35rem .8rem;font-size:.78rem;font-weight:600;pointer-events:none}
 @media (max-width:860px){.locx{grid-template-columns:1fr}}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.meta span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:.3rem .9rem;font-size:.82rem;font-weight:600;color:var(--muted)}
+.sclab{display:flex;justify-content:space-between;font-size:.72rem;font-weight:600;color:var(--muted)}
+.pn .vis{clip-path:inset(calc((1 - var(--rv,1))*100%) 0 0 0 round 18px)}
+.hero h1{transform-origin:left bottom}
+.chap{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 66px);z-index:45;translate:-50% -8px;opacity:0;pointer-events:none;background:var(--ink);color:var(--bg);border-radius:99px;padding:.35rem 1rem;font-size:.8rem;font-weight:700;letter-spacing:.04em;transition:opacity .35s,translate .35s;box-shadow:var(--sh)}
+.chap.show{opacity:1;translate:-50% 0}
+@media (max-width:700px){.chap{display:none}}
 @media (max-width:860px){.hg{grid-template-columns:1fr}.pn{grid-template-columns:1fr;min-height:0;border-radius:28px}.hero{padding-top:2rem}.pn::before{font-size:5rem}}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.rv h2{clip-path:none!important;transform:none!important}html{scroll-behavior:auto}.dash,.hero h1 span::after{animation:none}.snow{display:none}.rv .bl li,.rv .cc,.rv .rc,.rv .st,.facts.rv>div{opacity:1!important;translate:none!important;transition:none}.pn{scale:none}.art{transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.wd>span{transform:none!important;transition:none!important}.pn .vis{clip-path:none}.ti{translate:0 0}.chap{display:none}html{scroll-behavior:auto}.dash,.hero h1 span::after{animation:none}.snow{display:none}.rv .bl li,.rv .cc,.rv .rc,.rv .st,.facts.rv>div{opacity:1!important;translate:none!important;transition:none}.pn{scale:none}.art{transform:none}}
 </style>
 </head>
 <body>
@@ -187,19 +197,20 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
 </svg>
 
 <header id="nav"><b><svg class="i"><use href="#i-mount"/></svg>Zona Austral</b>
-  <div class="lk"><a href="#relieve">Relieve</a><a href="#clima">Clima</a><a href="#agua">Agua</a><a href="#recursos">Recursos</a><a href="#historia">Historia</a><a href="#plan">Planificación</a><a href="#equipo">Equipo</a></div>
+  <div class="lk"><a href="#relieve">Relieve</a><a href="#clima">Clima</a><a href="#agua">Agua</a><a href="#recursos">Recursos</a><a href="#historia">Historia</a><a href="#plan">Planificación</a><a href="#modelo3d">Maqueta</a><a href="#equipo">Equipo</a></div>
   <span class="latp"><i>●</i><span id="lat">43° S</span></span>
   <span id="bar"></span>
 </header>
 <aside class="rail" aria-hidden="true"><i id="rm"></i><span style="top:0">43° S</span><span style="top:25%">46°</span><span style="top:50%">49°</span><span style="top:75%">52°</span><span style="top:100%">56° S</span></aside>
 <div class="snow" id="snow" aria-hidden="true"></div>
+<div class="chap" id="chap" aria-hidden="true"></div>
 
 <section class="hero" id="inicio"><div class="wrap hg">
   <div class="hl" id="hl">
     <span class="eb">Geografía · Historia · Tecnología</span>
     <h1>Zona<br><span>Austral</span></h1>
     <p class="sub">Un viaje hacia el sur: de los 43° S a los 56° S, con fiordos, glaciares, estepa y mucha historia.</p>
-    <div class="chips"><span>XI Aysén</span><span>XII Magallanes y Antártica Chilena</span><span>Hasta los 56° S</span><span>Antártica: 53°–90° O</span></div>
+    <p class="meta"><span>⏱ 4 min de lectura</span><span>9 capítulos</span><span>Maqueta en 3D</span></p>
     <div class="cta"><a class="go" href="#relieve" style="text-decoration:none">Empezar el recorrido</a></div>
   </div>
   <div class="art"><svg viewBox="0 0 640 480" role="img" aria-label="Ilustración de un fiordo con montañas nevadas y bosque de lengas">
@@ -317,7 +328,7 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
         <p>El norte apunta hacia arriba. La zona austral queda en el extremo sur de Chile.</p></div>
       <div><h3>Leyenda</h3>
         <div class="leg"><i style="background:#2f7fd0"></i>Mar, fiordos, canales y lagos</div><div class="leg"><i style="background:#3a3533"></i>Islas y cordillera</div><div class="leg"><i style="background:#f4f4f2"></i>Glaciares y hielo</div><div class="leg"><i style="background:#4f8a3a"></i>Bosque</div><div class="leg"><i style="background:#f08a2a"></i>Volcán</div><div class="leg"><i style="background:#e0262b;border-radius:3px"></i>Ciudades y poblados</div><div class="leg"><i style="background:#8fd0ef;border-radius:3px"></i>Barco: navegación</div></div>
-      <div><h3>Escala</h3><p>Escala de la maqueta: <b>1 : ______</b></p><div class="scale"><i></i><i></i><i></i><i></i></div><p>0 &nbsp;&nbsp;&nbsp; ___ km</p></div>
+      <div><h3>Escala</h3><p>Escala aproximada: <b>1 : 4.000.000</b> (1 cm ≈ 40 km)</p><div class="scale"><i></i><i></i><i></i><i></i></div><div class="sclab"><span>0</span><span>40</span><span>80</span><span>120</span><span>160 km</span></div><p class="note">El lado largo de la maqueta (36,5 cm) recorre unos 1.450 km de norte a sur.</p></div>
     </div></div>
 </section>
 
@@ -338,21 +349,21 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
     </div></div>
 </section>
 
-<section class="pn p2 one rv" id="modelo3d" data-n="3D">
+<section class="pn p2 one rv" id="modelo3d" data-n="08">
   <div><span class="tag"><svg class="i"><use href="#i-box"/></svg>Nuestra maqueta</span>
     <h2>La zona austral <em>en nuestras manos</em></h2>
-    <p class="sub" style="margin:.8rem 0 1.4rem">Así quedó la maqueta. Además la escaneamos con el celular para que puedas girarla en 3D.</p>
+    <p class="sub" style="margin:.8rem 0 1.4rem">Mide 25 × 36,5 cm. La escaneamos con el celular para que puedas girarla en 3D.</p>
     <div class="mq">
       <figure class="foto"><img id="foto" alt="Foto de la maqueta de la zona austral: mar azul, islas y cordillera oscuras, bosque, volcán, glaciar blanco, casas rojas y un barco" loading="lazy"><figcaption>La maqueta terminada</figcaption></figure>
       <div class="m3d" id="m3d"></div>
     </div></div>
 </section>
 
-<section class="pn dk one rv" id="equipo" data-n="08">
+<section class="pn dk one rv" id="equipo" data-n="09">
   <div><span class="tag"><svg class="i"><use href="#i-team"/></svg>El equipo</span>
     <h2>Cómo la <em>hicimos</em></h2>
     <div class="cl3">
-      <div class="cc"><span class="ico"><svg class="i"><use href="#i-box"/></svg></span><h3>Materiales</h3><ul><li>Foami moldeable</li><li>Pintura</li><li>Cajas de huevo</li><li>Casas de Monopoly</li></ul></div>
+      <div class="cc"><span class="ico"><svg class="i"><use href="#i-box"/></svg></span><h3>La maqueta</h3><ul><li>25 × 36,5 cm</li><li>Escala aprox. 1 : 4.000.000</li><li>Foami moldeable, pintura, cajas de huevo y casas de Monopoly</li></ul></div>
       <div class="cc"><span class="ico"><svg class="i"><use href="#i-team"/></svg></span><h3>Integrantes</h3><p class="script">José Núñez</p><p class="script">Felipe Concha</p></div>
       <div class="cc"><span class="ico"><svg class="i"><use href="#i-mic"/></svg></span><h3>Presentación</h3><p>Explicamos relieve, clima, agua, recursos e historia de la zona austral y respondemos preguntas con seguridad.</p></div>
     </div></div>
@@ -8738,8 +8749,17 @@ function verMaqueta(box,getBuffer){
 function b64(t){var s=atob(t),a=new Uint8Array(s.length);for(var k=0;k<s.length;k++)a[k]=s.charCodeAt(k);return a}
 var fimg=$('#foto');if(fimg&&window.MAQ_FOTO)fimg.src='data:image/jpeg;base64,'+MAQ_FOTO.replace(/\s+/g,'');
 if(window.MAQ)verMaqueta($('#m3d'),function(){return{nv:MAQ.nv,ni:MAQ.ni,mn:MAQ.mn,mx:MAQ.mx,geo:b64(MAQ.geo).buffer,tex:b64(MAQ.tex)}});
+/* títulos que aparecen palabra por palabra */
+$$('.pn h2,.loch').forEach(function(h){var n=0;
+  (function walk(el){[].slice.call(el.childNodes).forEach(function(c){
+    if(c.nodeType===3){var parts=c.textContent.split(/(\s+)/),f=D.createDocumentFragment();
+      parts.forEach(function(t){if(!t)return;if(/^\s+$/.test(t)){f.appendChild(D.createTextNode(t));return}
+        var o=D.createElement('span');o.className='wd';var i=D.createElement('span');i.textContent=t;i.style.setProperty('--w',n++);o.appendChild(i);f.appendChild(o)});
+      el.replaceChild(f,c)}
+    else if(c.nodeType===1&&c.tagName!=='BR')walk(c)})})(h)});
+var chap=$('#chap'),lastCh='',chT;
 var strip=$('.locx');
-var names={relieve:'Relieve',clima:'Clima',agua:'Agua',recursos:'Recursos',historia:'Historia',leer:'Orientación',plan:'Planificación',modelo3d:'3D',equipo:'Equipo'};
+var names={relieve:'Relieve',clima:'Clima',agua:'Agua',recursos:'Recursos',historia:'Historia',leer:'Simbología',plan:'Planificación',modelo3d:'Nuestra maqueta',equipo:'Equipo'};
 var secs=Object.keys(names).map(function(k){return $('#'+k)}).filter(Boolean);
 var links=$$('.lk a').map(function(a){return{a:a,t:$(a.getAttribute('href'))}});
 
@@ -8755,6 +8775,7 @@ function update(){
   bar.style.width=(p*100).toFixed(1)+'%';
   rmk.style.top=(p*100).toFixed(1)+'%';var cs='';secs.forEach(function(sx){if(!sx.hidden&&sx.getBoundingClientRect().top<vh*.4)cs=names[sx.id]});
   lat.textContent=Math.round(43+p*13)+'° S'+(cs?' · '+cs:'');
+  if(cs!==lastCh){lastCh=cs;if(cs&&!rm){var num=Object.keys(names).indexOf(Object.keys(names).filter(function(k){return names[k]===cs})[0])+1;chap.textContent='Capítulo '+num+' · '+cs;chap.classList.add('show');clearTimeout(chT);chT=setTimeout(function(){chap.classList.remove('show')},1400)}}
   if(strip){var sr=strip.getBoundingClientRect(),sp=clamp((vh-sr.top)/(vh*.7));strip.style.setProperty('--sf',(rm?1:sp).toFixed(3));strip.style.setProperty('--sa',sp>.85||rm?1:0)}
   totop.classList.toggle('show',y>vh*1.2);
   var cur=null;links.forEach(function(l){if(l.t&&l.t.getBoundingClientRect().top<vh*.4)cur=l});
@@ -8770,6 +8791,7 @@ function update(){
     var c=((r.top+r.height/2)-vh/2)/(vh/2+r.height/2);
     pn.style.setProperty('--o',clamp(c,-1,1).toFixed(3));
     pn.style.setProperty('--e',clamp((vh-r.top)/(vh*.55)).toFixed(3));
+    pn.style.setProperty('--hl',clamp((vh*.85-r.top)/(vh*.45)).toFixed(3));pn.style.setProperty('--rv',clamp((vh-r.top)/(vh*.6)).toFixed(3));
     pn.style.setProperty('--pe',clamp((vh*.92-r.top)/(Math.min(r.height,vh)*.8)).toFixed(3));
   });
   var r=tl.getBoundingClientRect();tl.style.setProperty('--tp',clamp((vh*.66-r.top)/r.height).toFixed(3));
