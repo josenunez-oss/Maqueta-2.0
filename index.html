@@ -145,6 +145,18 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
 [data-draw]{stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--pe,1))}
 .rv .bl li,.rv .cc,.rv .rc,.rv .st,.facts.rv>div{opacity:0;translate:0 18px;transition:opacity .6s calc(.2s + var(--i,0)*.09s),translate .6s calc(.2s + var(--i,0)*.09s),transform .3s}
 .rv.in .bl li,.rv.in .cc,.rv.in .rc,.rv.in .st,.facts.rv.in>div{opacity:1;translate:0 0}
+.loc{margin:2.4rem auto .6rem}
+.locx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:2rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(1.3rem,3vw,2.2rem);box-shadow:var(--sh)}
+.loch{font-size:clamp(1.8rem,4vw,2.6rem);margin:.5rem 0 .7rem}.loch em{font-style:normal;color:var(--cal)}
+.strip{width:100%;height:auto}
+.sfill{transform-origin:20px 0;transform:scaleX(var(--sf,0))}
+.saus{opacity:var(--sa,0);transition:opacity .4s}
+.m3d{border-radius:22px;overflow:hidden;background:var(--card);aspect-ratio:4/3;max-width:46rem}
+.m3d{position:relative;background:radial-gradient(circle at 50% 40%,var(--card),var(--p2))}
+.m3d model-viewer{width:100%;height:100%;--poster-color:transparent;--progress-bar-color:var(--len)}
+.m3d .arb{position:absolute;right:.8rem;bottom:.8rem;border:0;border-radius:99px;background:var(--len);color:#fff;font:inherit;font-weight:600;font-size:.85rem;padding:.55rem 1rem;cursor:pointer;box-shadow:var(--sh)}
+.m3d .hint{position:absolute;left:.8rem;bottom:.8rem;background:var(--card);color:var(--muted);border-radius:99px;padding:.35rem .8rem;font-size:.78rem;font-weight:600;pointer-events:none}
+@media (max-width:860px){.locx{grid-template-columns:1fr}}
 @media (max-width:860px){.hg{grid-template-columns:1fr}.pn{grid-template-columns:1fr;min-height:0;border-radius:28px}.hero{padding-top:2rem}.pn::before{font-size:5rem}}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.rv h2{clip-path:none!important;transform:none!important}html{scroll-behavior:auto}.dash,.hero h1 span::after{animation:none}.snow{display:none}.rv .bl li,.rv .cc,.rv .rc,.rv .st,.facts.rv>div{opacity:1!important;translate:none!important;transition:none}.pn{scale:none}.art{transform:none}}
 </style>
@@ -205,6 +217,22 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
   <div><b data-c="3">3</b><span>climas: marítimo lluvioso, patagónico y polar</span></div>
   <div><b data-c="56" data-s="° S">56° S</b><span>límite sur del Chile continental (Islas Diego Ramírez)</span></div>
   <div><b>53°–90° O</b><span>meridianos del Territorio Antártico Chileno</span></div>
+</section>
+
+<section class="wrap loc rv" id="ubicacion">
+  <div class="locx">
+    <div><span class="eb">¿Dónde queda?</span>
+      <h2 class="loch">El último tramo de <em>Chile</em></h2>
+      <p class="sub">Chile continental va desde los 17°30’ S hasta los 56° S. La zona austral ocupa el último tramo, desde Aysén hasta el Cabo de Hornos y las Islas Diego Ramírez.</p></div>
+    <svg class="strip" viewBox="0 0 520 120" role="img" aria-label="Franja de Chile de norte a sur con la zona austral destacada">
+      <defs><linearGradient id="stg" x1="0" x2="1"><stop offset="0" stop-color="#e5c47e"/><stop offset=".45" stop-color="#9cc78a"/><stop offset="1" stop-color="#4f9a62"/></linearGradient></defs>
+      <rect x="20" y="44" width="480" height="22" rx="11" fill="url(#stg)" opacity=".35"/>
+      <rect class="sfill" x="20" y="44" width="480" height="22" rx="11" fill="url(#stg)"/>
+      <rect class="saus" x="350" y="38" width="150" height="34" rx="17" fill="#3b3a9e"/>
+      <text x="425" y="60" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-size="14" font-weight="700" fill="#fff">Zona Austral</text>
+      <g font-family="Outfit,Arial,sans-serif" font-size="13" font-weight="600" fill="#566779"><text x="20" y="96">17°30’ S</text><text x="350" y="96" text-anchor="middle">43° S</text><text x="500" y="96" text-anchor="end">56° S</text><text x="20" y="28">Norte</text><text x="500" y="28" text-anchor="end">Sur</text></g>
+    </svg>
+  </div>
 </section>
 
 <main>
@@ -307,6 +335,13 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
     </div></div>
 </section>
 
+<section class="pn p2 one rv" id="modelo3d" data-n="3D" hidden>
+  <div><span class="tag"><svg class="i"><use href="#i-box"/></svg>Nuestra maqueta</span>
+    <h2>Gírala en <em>3D</em></h2>
+    <p class="sub" style="margin:.8rem 0 1.2rem">La escaneamos con el celular para que puedas verla desde todos los lados.</p>
+    <div class="m3d" id="m3d"></div></div>
+</section>
+
 <section class="pn dk one rv" id="equipo" data-n="08">
   <div><span class="tag"><svg class="i"><use href="#i-team"/></svg>El equipo</span>
     <h2>Cómo la <em>hicimos</em></h2>
@@ -324,12 +359,33 @@ footer b{display:block;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;color:
 
 <script>
 (function(){
+/* =====================================================
+   CONFIGURACIÓN: para mostrar la maqueta en 3D, sube el archivo .glb
+   junto a este index.html en GitHub y escribe su nombre aquí.
+   Ej: modelo3d:'maqueta.glb'
+   ===================================================== */
+var CONFIG={modelo3d:'maqueta.glb'};
+
 var D=document,H=D.documentElement;
 var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 function $(s,c){return (c||D).querySelector(s)}function $$(s,c){return [].slice.call((c||D).querySelectorAll(s))}
 function clamp(x,a,b){a=a===undefined?0:a;b=b===undefined?1:b;return Math.max(a,Math.min(b,x))}
 
 var bar=$('#bar'),lat=$('#lat'),rmk=$('#rm'),layers=$$('.art [data-s]'),art=$('.art'),hl=$('.hl'),totop=$('#totop'),ring=$('#ring'),tl=$('#tl'),tis=$$('.ti'),pns=$$('.pn'),snow=$('#snow');
+function mostrar3d(src){
+  $('#modelo3d').hidden=false;
+  $('#m3d').innerHTML='<model-viewer src="'+src+'" camera-controls auto-rotate auto-rotate-delay="1500" rotation-per-second="18deg" camera-orbit="25deg 58deg auto" min-camera-orbit="auto 10deg auto" max-camera-orbit="auto 88deg auto" touch-action="pan-y" interaction-prompt="none" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" alt="Modelo 3D de la maqueta de la zona austral"><button slot="ar-button" class="arb">Verla sobre tu mesa</button><span class="hint">Arrastra para girar · pellizca para acercar</span></model-viewer>';
+  var ms=D.createElement('script');ms.type='module';ms.src='https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js';D.head.appendChild(ms);
+}
+if(/\.js$/.test(CONFIG.modelo3d)){
+  /* el modelo viene guardado dentro de un archivo .js */
+  var ds=D.createElement('script');ds.src=CONFIG.modelo3d;
+  ds.onload=function(){try{var bin=atob(window.MAQUETA_B64),arr=new Uint8Array(bin.length);for(var k=0;k<bin.length;k++)arr[k]=bin.charCodeAt(k);mostrar3d(URL.createObjectURL(new Blob([arr],{type:'model/gltf-binary'})));update()}catch(e){}};
+  D.head.appendChild(ds);
+}else if(CONFIG.modelo3d){mostrar3d(CONFIG.modelo3d)}
+var strip=$('.locx');
+var names={relieve:'Relieve',clima:'Clima',agua:'Agua',recursos:'Recursos',historia:'Historia',leer:'Orientación',plan:'Planificación',modelo3d:'3D',equipo:'Equipo'};
+var secs=Object.keys(names).map(function(k){return $('#'+k)}).filter(Boolean);
 var links=$$('.lk a').map(function(a){return{a:a,t:$(a.getAttribute('href'))}});
 
 /* escalonar la aparición de listas y tarjetas */
@@ -342,7 +398,9 @@ var tick=false;
 function update(){
   tick=false;var y=window.scrollY,vh=window.innerHeight,h=Math.max(1,H.scrollHeight-vh),p=clamp(y/h);
   bar.style.width=(p*100).toFixed(1)+'%';
-  rmk.style.top=(p*100).toFixed(1)+'%';lat.textContent=Math.round(43+p*13)+'° S';
+  rmk.style.top=(p*100).toFixed(1)+'%';var cs='';secs.forEach(function(sx){if(!sx.hidden&&sx.getBoundingClientRect().top<vh*.4)cs=names[sx.id]});
+  lat.textContent=Math.round(43+p*13)+'° S'+(cs?' · '+cs:'');
+  if(strip){var sr=strip.getBoundingClientRect(),sp=clamp((vh-sr.top)/(vh*.7));strip.style.setProperty('--sf',(rm?1:sp).toFixed(3));strip.style.setProperty('--sa',sp>.85||rm?1:0)}
   totop.classList.toggle('show',y>vh*1.2);
   var cur=null;links.forEach(function(l){if(l.t&&l.t.getBoundingClientRect().top<vh*.4)cur=l});
   links.forEach(function(l){l.a.classList.toggle('on',l===cur)});
